@@ -98,11 +98,9 @@ class WeatherTableViewController: UITableViewController {
         return cell
     }
     
-
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         performSegueWithIdentifier("DataSegue", sender: nil)
-        
         
     }
     
