@@ -15,6 +15,10 @@ class City: NSObject {
     var latitude: Double = 0
     var longitude: Double = 0
     
+    override init() {
+        super.init()
+    }
+    
     init (name: String, zipcode: String, latitude: Double, longitude: Double){
         self.name = name
         self.zipCode = zipcode

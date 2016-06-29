@@ -15,32 +15,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="47" id="kCZ-HG-Swc" customClass="WeatherTableViewCell" customModule="WeatherApp2" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="47" id="kCZ-HG-Swc" customClass="WeatherTableViewCell" customModule="WeatherApp2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="47"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kCZ-HG-Swc" id="ZtR-xC-I0d">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="46"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="46"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCy-vW-NX8">
-                                            <rect key="frame" x="8" y="8" width="64" height="32"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                            <rect key="frame" x="8" y="8" width="64" height="31"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rn-1O-JpW">
-                                            <rect key="frame" x="550" y="19" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="80" y="21" width="30" height="14"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="2rn-1O-JpW" firstAttribute="top" secondItem="ZtR-xC-I0d" secondAttribute="topMargin" constant="13" id="2Ds-qg-4mA"/>
                                         <constraint firstAttribute="topMargin" secondItem="wCy-vW-NX8" secondAttribute="top" id="6PQ-bt-HpO"/>
                                         <constraint firstItem="2rn-1O-JpW" firstAttribute="top" secondItem="ZtR-xC-I0d" secondAttribute="topMargin" constant="11" id="EMn-Uy-VdU"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="2rn-1O-JpW" secondAttribute="trailing" id="Qzj-AI-Cqy"/>
+                                        <constraint firstItem="2rn-1O-JpW" firstAttribute="leading" secondItem="wCy-vW-NX8" secondAttribute="trailing" constant="8" id="e0M-qG-HYm"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="wCy-vW-NX8" secondAttribute="leading" id="vMC-4a-8To"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="EMn-Uy-VdU"/>
+                                            <exclude reference="Qzj-AI-Cqy"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="cityTableViewLabel" destination="wCy-vW-NX8" id="nU3-cu-uSB"/>

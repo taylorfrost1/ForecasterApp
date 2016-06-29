@@ -12,6 +12,7 @@ import CoreLocation
 class WeatherTableViewController: UITableViewController {
     
     var citiesArray = [City]()
+    var currentCity : City?
     var cityName: String = ""
     var zipcode: String = ""
 
@@ -48,6 +49,9 @@ class WeatherTableViewController: UITableViewController {
             print(secondTextField.text)
         
             self.geocoding(self.zipcode, completion: {(latitude, longitude) in
+                
+                print(latitude)
+                print(longitude)
             
             let currentCity = City(name: self.cityName, zipcode: self.zipcode, latitude: latitude, longitude: longitude)
                 
@@ -78,7 +82,6 @@ class WeatherTableViewController: UITableViewController {
         
         self.presentViewController(alertController, animated: true, completion: nil)
 
-
     }
     
     // MARK: - Table view data source
@@ -99,10 +102,22 @@ class WeatherTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        performSegueWithIdentifier("DataSegue", sender: nil)
-        
+  
     }
+    
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if(indexPath.row % 2 == 0)  {
+            
+            cell.backgroundColor = UIColor.grayColor()
+            
+            
+        } else {
+            
+            cell.backgroundColor = UIColor.whiteColor()
+        }
+    }
+    
     
     func geocoding(location: String, completion: (Double, Double) -> ()) {
         CLGeocoder().geocodeAddressString(location) {
